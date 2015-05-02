@@ -25,3 +25,13 @@
 (defun raise (n x)
   (mapcar #'(lambda (e) (+ e n))
           x))
+
+(defun normalize (x)
+  (mapcar #'(lambda (e)
+              (cond ((< e 1) (+ e 12))
+                    ((> e 12) (- e 12))
+                    (t e)))
+          x))
+
+(defun transpose (n x)
+  (notes (normalize (raise n (numbers x)))))
