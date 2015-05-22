@@ -52,3 +52,12 @@
           (mapcar
            #'(lambda (b) (third (first (fetch (list b 'shape '?)))))
            (supporters block))))
+
+(defun desc1 (block)
+  (fetch (list block '? '?)))
+
+(defun desc2 (block)
+  (mapcar #'rest (desc1 block)))
+
+(defun description (block)
+  (reduce #'append (desc2 block)))

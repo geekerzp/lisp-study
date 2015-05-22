@@ -35,3 +35,6 @@
 
 (defun transpose (n x)
   (notes (normalize (raise n (numbers x)))))
+
+
+
